@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 import django_heroku
 django_heroku.settings(locals())
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'jwanderson',
+    'API_KEY': '958435128361973',
+    'API_SECRET': 'Yx0UUlMPr22ddmoBkjuSPwS7Z4I'
+}

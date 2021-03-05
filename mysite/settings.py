@@ -124,29 +124,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+DEBUG = True
 STATIC_URL = '/static/'
-
-
 SITE_ID = 1
 LOGIN_REDIRECT = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-
 AUTH_USER_MODEL = 'accounts.CustomUser'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-
-
-try:
-    from.local_settings import *
-except ImportError:
-    pass
-
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
+import django_heroku
+django_heroku.settings(locals())

@@ -1,7 +1,0 @@
-myvenv
-.vscode
-__pycache__
-*/pyc
-.DS_Store
-.env
-local_settings.py
